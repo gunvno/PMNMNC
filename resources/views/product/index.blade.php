@@ -13,8 +13,20 @@
             <th>price</th>
         </tr>
         <tr>
-            <td>kho ga</td>
-            <td>10000</td>
+            <td>kho ga mixi</td>
+            <td>100000</td>
+        </tr>
+        <tr>
+            <td>kho bo</td>
+            <td>80000</td>
+        </tr>
+        <tr>
+            <td>Cho xao xa ot</td>
+            <td>200000</td>
+        </tr>
+        <tr>
+            <td>lau cho</td>
+            <td>500000</td>
         </tr>
         <tr>
             <td colspan="2">

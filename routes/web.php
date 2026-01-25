@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,17 +22,21 @@ Route::get('/banco/{n}', function (int $n) {
 });
 
 Route::prefix('product')->group(function () {
-
-    Route::get('/', function () {
-        return view('product.index');
-    })->name('index');
-
-Route::get('/add', function () {
-    return view('product.add');
-})->name('add');
-
-Route::get('/{id?}', function (string $id = '123') {
-    return view('product.detail', ['id' => $id]);
+    Route::controller(ProductController::class)->group(function () {
+        Route::get('/', 'index');
+        Route::get('/detail/{id}', 'getDetail');
+        Route::get('/create', 'create')->name('add');
+        Route::post('/store', 'store');
+    });
+});
+Route::prefix('authentication')->group(function () {
+    Route::controller(AuthenticationController::class)->group(function () {
+        Route::post('/checkLogin', 'checkLogin');
+        Route::get('/login', 'login');
+        Route::get('/register','register');
+        route::post('/checkRegister','checkRegister');
+    });
 });
 
-});
+
+

@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/">
+    <form action="/product/store" method="POST">
+        @csrf
         <h1>add product</h1>
         <input type="text" name="name" placeholder="product name">
         <input type="text" name="price" placeholder="product price">

@@ -6,29 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>proudct list</h1>
-    <>
+    <h1>{{ $title }}</h1>
+    <table>
         <tr>
             <th>name</th>
             <th>price</th>
         </tr>
+        @foreach ($products as $product)
         <tr>
-            <td>kho ga mixi</td>
-            <td>100000</td>
+            <td>{{ $product['name'] }}</td>
+            <td>{{ $product['price'] }}</td>
         </tr>
-        <tr>
-            <td>kho bo</td>
-            <td>80000</td>
-        </tr>
-        <tr>
-            <td>Cho xao xa ot</td>
-            <td>200000</td>
-        </tr>
-        <tr>
-            <td>lau cho</td>
-            <td>500000</td>
-        </tr>
-        <tr>
+        @endforeach
             <td colspan="2">
                 <a href="{{ route('add') }}">add product</a>
             </td>

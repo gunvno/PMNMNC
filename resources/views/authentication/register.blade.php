@@ -12,6 +12,7 @@
         <input type="text" name="username" placeholder="username">
         <input type="text" name="pass" placeholder="password">
         <input type="text" name="repass" placeholder="password">
+        <input type="number" name="age" placeholder="Input your age">
         <button type="submit">register</button>
     </form>
 </body>

@@ -21,7 +21,9 @@ class AuthenticationController extends Controller
     }
     public function checkRegister(Request $request){
         if($request->input('username')== 'longtv' && $request->input('pass')=='123456'
-        && $request->input('pass')== $request->input('repass') ){
+        && $request->input('pass')== $request->input('repass') 
+        && $request->input('mssv')== '0060467' && $request->input('class') == '67PM1' 
+        && $request->input('gender') == 'male'){
             return "Dang ky thanh cong";
         }
         else return "Dang ky that bai";

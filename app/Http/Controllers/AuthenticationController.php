@@ -28,4 +28,7 @@ class AuthenticationController extends Controller
         }
         else return "Dang ky that bai";
     }
+    public function age(Request $request){
+        return view("authentication.age");
+    }
 }

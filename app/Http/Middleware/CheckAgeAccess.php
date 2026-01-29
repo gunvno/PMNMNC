@@ -17,11 +17,9 @@ class CheckAgeAccess
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Kiểm tra nếu request có gửi lên số tuổi (ví dụ form đăng ký)
         if ($request->filled('age')) {
             $age = $request->input('age');
             
-            // Nếu tuổi < 18
             if ($age < 18) {
                 return response()->json([
             'message' => 'Access denied. You must be at least 18 years old to register.',

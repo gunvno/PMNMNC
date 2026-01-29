@@ -23,12 +23,15 @@ Route::get('/banco/{n}', function (int $n) {
     return view('banco', ['n' => $n]);
 });
 
-Route::prefix('pronduct')->group(function () {
+Route::prefix('product')->group(function () {
     Route::controller(ProductController::class)->group(function () {
         Route::get('/', 'index')->middleware(CheckTimeAccess::class);
-        Route::get('/detail/{id}', 'getDetail');
+        Route::get('/show/{id}', 'show')->name('show');
         Route::get('/create', 'create')->name('add');
         Route::post('/store', 'store');
+        Route::post('/destroy/{id}','destroy')->name('delete');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
     });
 });
 Route::prefix('authentication')->group(function () {
@@ -36,7 +39,8 @@ Route::prefix('authentication')->group(function () {
         Route::post('/checkLogin', 'checkLogin');
         Route::get('/login', 'login');
         Route::get('/register','register');
-        route::post('/checkRegister','checkRegister')->middleware(CheckAgeAccess::class);
+        route::post('/checkRegister','checkRegister');
+        Route::get('/age','age')->middleware(CheckAgeAccess::class);
     });
 });
 Route::resource('test',TestController::class);

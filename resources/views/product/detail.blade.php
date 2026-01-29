@@ -6,7 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+
     <h1>product detail</h1>
-    <h1>ID:  {{ $id }}</h1>
+    <h1>ID:  {{ $product->id }}</h1>
+    <h1>Name:  {{ $product->name }}</h1>
+    <h1>Price:  {{ $product->price }}</h1>
+    <h1>Stock:  {{ $product->stock }}</h1>
 </body>
 </html>

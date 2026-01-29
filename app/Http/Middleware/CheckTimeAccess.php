@@ -6,8 +6,7 @@ use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-
-public class CheckTimeAccess
+class CheckTimeAccess
 {
     /**
      * Handle an incoming request.

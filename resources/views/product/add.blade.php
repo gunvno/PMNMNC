@@ -9,8 +9,12 @@
     <form action="/product/store" method="POST">
         @csrf
         <h1>add product</h1>
+        <label for="name">Name</label>
         <input type="text" name="name" placeholder="product name">
+        <label for="price">Price</label>
         <input type="text" name="price" placeholder="product price">
+        <label for="stock">Stock</label>
+        <input type="text" name="stock" placeholder="product stock">
         <button type="submit">add</button>
 
     </form>
